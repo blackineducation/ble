@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Empowering girls to conquer every field - from the pitch to the boardroom, from labs to gaming arenas!">
+    <meta name="keywords" content="Empowerment, Girls, Activities, STEM, Sports, Leadership">
+    <title>9irls.com - Empowering Girls to Think Like Kings</title>
+    <link href="./styles/tailwind.min.css" rel="stylesheet">
+    <script src="./scripts/gsap.min.js"></script>
+    <script src="./scripts/ScrollTrigger.min.js"></script>
+    <script src="./scripts/lucide.min.js"></script>
+    <style>
+        .changing-image {
+            opacity: 0;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <header class="bg-purple-600 text-white">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">9irls.com</a>
+            <button class="md:hidden" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+            <ul class="hidden md:flex space-x-4">
+                <li><a href="#activities" class="hover:text-pink-300">Activities</a></li>
+                <li><a href="#events" class="hover:text-pink-300">Events</a></li>
+                <li><a href="#blog" class="hover:text-pink-300">Blog</a></li>
+                <li><a href="#about" class="hover:text-pink-300">About</a></li>
+                <li><a href="#contact" class="hover:text-pink-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="mobile-menu hidden bg-purple-600 text-white p-4" id="mobile-menu">
+        <ul class="space-y-2">
+            <li><a href="#activities" class="block">Activities</a></li>
+            <li><a href="#events" class="block">Events</a></li>
+            <li><a href="#blog" class="block">Blog</a></li>
+            <li><a href="#about" class="block">About</a></li>
+            <li><a href="#contact" class="block">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section id="hero" class="relative bg-purple-100 py-20">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Think Like a King, Lead Like a Queen</h1>
+                    <p class="text-xl mb-6">Empowering girls to conquer every field - from the pitch to the boardroom, from labs to gaming arenas!</p>
+                    <a href="#activities" class="bg-pink-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-pink-600 transition duration-300 flex items-center">
+                        Explore Activities
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="./images/9irlsEmpowerment.webp" alt="Girls empowerment" class="rounded-lg shadow-lg">
+                    <div id="changing-image" class="changing-image absolute bottom-0 right-0 w-1/2 h-1/2 rounded-lg shadow-lg overflow-hidden">
+                        <img src="./images/9irlsFootball.webp" alt="Girl Footballer" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Rule Your Kingdom</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-purple-100 rounded-lg p-6 shadow-md">
+                        <i data-lucide="dribbble" class="w-12 h-12 text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Sports</h3>
+                        <p class="mb-4">Dominate the field like a true monarch. Learn tactics, skills, and leadership.</p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 flex items-center">
+                            Learn More
+                            <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="bg-pink-100 rounded-lg p-6 shadow-md">
+                        <i data-lucide="flask-conical" class="w-12 h-12 text-pink-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">STEM Activities</h3>
+                        <p class="mb-4">Rule the world of science and tech. Experiment, innovate, and lead the future.</p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 flex items-center">
+                            Discover STEM
+                            <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="bg-blue-100 rounded-lg p-6 shadow-md">
+                        <i data-lucide="gamepad-2" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Gaming</h3>
+                        <p class="mb-4">Conquer virtual worlds. Master strategy, teamwork, and become an e-sports queen.</p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 flex items-center">
+                            Game On
+                            <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="bg-green-100 rounded-lg p-6 shadow-md">
+                        <i data-lucide="palette" class="w-12 h-12 text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Traditional Arts</h3>
+                        <p class="mb-4">Express your royal creativity. Dance, paint, and cook like the queen you are.</p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 flex items-center">
+                            Explore More
+                            <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section id="weekly-schedule" class="py-16 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center text-white">Royal Weekly Schedule</h2>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div id="schedule-controls" class="mb-6 flex flex-wrap justify-between items-center">
+                <button id="prev-week" class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition duration-300 mb-2 sm:mb-0">
+                    <i data-lucide="chevron-left" class="w-5 h-5 inline-block"></i> Previous Week
+                </button>
+                <h3 id="current-week" class="text-xl font-bold text-center w-full sm:w-auto mb-2 sm:mb-0">Week of <span id="week-start-date"></span></h3>
+                <button id="next-week" class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition duration-300">
+                    Next Week <i data-lucide="chevron-right" class="w-5 h-5 inline-block"></i>
+                </button>
+            </div>
+            <div class="overflow-x-auto">
+                <div id="schedule-grid" class="grid grid-cols-8 gap-2 min-w-max">
+                    <!-- Schedule content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <section id="events" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Royal Events</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/9irlsFootball.webp" alt="Girls Football Tournament" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Queens of the Field</h3>
+                            <p class="text-gray-600 mb-4">Join our annual football tournament and showcase your skills!</p>
+                            <a href="https://www.eventbrite.com" target="_blank" class="text-purple-600 font-semibold hover:text-purple-800">Register on Eventbrite</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/9irlsSTEM.webp" alt="STEM Summer Workshop" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Tech Princesses Summit</h3>
+                            <p class="text-gray-600 mb-4">A week-long adventure into the world of science and technology!</p>
+                            <a href="https://www.luma.com" target="_blank" class="text-purple-600 font-semibold hover:text-purple-800">Sign up on Luma</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/9irlsGamer.webp" alt="Girls Gaming Championship" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Gamer Queens Championship</h3>
+                            <p class="text-gray-600 mb-4">Compete in our online gaming tournament and win amazing prizes!</p>
+                            <a href="#" class="text-purple-600 font-semibold hover:text-purple-800">Register in our app</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Royal Decrees (Blog)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/9irlsSkyBrown.jpeg" alt="Rising Stars in Women's Sports Sky Brown" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Rising Stars in Women's Sports</h3>
+                            <p class="text-gray-600 mb-4">Meet the young talents shaping the future of women's sports and breaking barriers.</p>
+                            <a href="#" class="text-purple-600 font-semibold hover:text-purple-800">Read More</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/9irlsSTEMClass.webp" alt="Girls in STEM: Bridging the Gap" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Girls in STEM: Bridging the Gap</h3>
+                            <p class="text-gray-600 mb-4">Exploring initiatives and success stories of girls excelling in science, technology, engineering, and mathematics.</p>
+                            <a href="#" class="text-purple-600 font-semibold hover:text-purple-800">Read More</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/9irlsGamerRise.webp" alt="The Rise of Girl Gamers" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">The Rise of Girl Gamers</h3>
+                            <p class="text-gray-600 mb-4">From casual gaming to professional e-sports, girls are making their mark in the gaming world.</p>
+                            <a href="#" class="text-purple-600 font-semibold hover:text-purple-800">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="avatars" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Choose Your Royal Avatar</h2>
+                <div class="flex justify-center space-x-8">
+                    <svg class="avatar" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="#FFD700"/>
+                        <circle cx="35" cy="40" r="5" fill="#000"/>
+                        <circle cx="65" cy="40" r="5" fill="#000"/>
+                        <path d="M 30 60 Q 50 70 70 60" fill="none" stroke="#000" stroke-width="3"/>
+                    </svg>
+                    <svg class="avatar" viewBox="0 0 100 100">
+                        <rect x="10" y="10" width="80" height="80" fill="#4B0082"/>
+                        <circle cx="35" cy="40" r="5" fill="#FFF"/>
+                        <circle cx="65" cy="40" r="5" fill="#FFF"/>
+                        <path d="M 30 60 Q 50 70 70 60" fill="none" stroke="#FFF" stroke-width="3"/>
+                    </svg>
+                    <svg class="avatar" viewBox="0 0 100 100">
+                        <polygon points="50,10 10,90 90,90" fill="#008000"/>
+                        <circle cx="35" cy="50" r="5" fill="#FFF"/>
+                        <circle cx="65" cy="50" r="5" fill="#FFF"/>
+                        <path d="M 30 70 Q 50 80 70 70" fill="none" stroke="#FFF" stroke-width="3"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+       
+<section id="parental-consent" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Parental Consent</h2>
+                <div class="max-w-2xl mx-auto bg-purple-100 p-8 rounded-lg shadow-md">
+                    <p class="mb-6">At 9irls.com, we prioritize the safety and privacy of our young users. Before participating in any activities or events, we require parental consent. Please fill out the form below:</p>
+                    <form id="consent-form" class="space-y-4">
+                        <div>
+                            <label for="parent-name" class="block mb-2">Parent/Guardian Name:</label>
+                            <input type="text" id="parent-name" name="parent-name" required class="w-full px-3 py-2 border rounded-md">
+                        </div>
+                        <div>
+                            <label for="child-name" class="block mb-2">Child's Name:</label>
+                            <input type="text" id="child-name" name="child-name" required class="w-full px-3 py-2 border rounded-md">
+                        </div>
+                        <div>
+                            <label for="parent-email" class="block mb-2">Parent/Guardian Email:</label>
+                            <input type="email" id="parent-email" name="parent-email" required class="w-full px-3 py-2 border rounded-md">
+                        </div>
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" required class="mr-2">
+                                I consent to my child's participation in 9irls.com activities and events.
+                            </label>
+                        </div>
+                        <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700">Submit Consent</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Contact the Royal Court</h2>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2">Your Name:</label>
+                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 border rounded-md">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2">Your Email:</label>
+                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 border rounded-md">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Your Message:</label>
+                            <textarea id="message" name="message" required class="w-full px-3 py-2 border rounded-md h-32"></textarea>
+                        </div>
+                        <button type="submit" class="bg-pink-500 text-white px-6 py-2 rounded-md hover:bg-pink-600">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-purple-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">9irls.com</h3>
+                    <p>Empowering girls to think like kings and lead like queens.</p>
+                </div>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#activities" class="hover:text-pink-300">Activities</a></li>
+                        <li><a href="#events" class="hover:text-pink-300">Events</a></li>
+                        <li><a href="#blog" class="hover:text-pink-300">Blog</a></li>
+                        <li><a href="#avatars" class="hover:text-pink-300">Avatars</a></li>
+                        <li><a href="#parental-consent" class="hover:text-pink-300">Parental Consent</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <p class="flex items-center">
+                        <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                        info@9irls.com
+                    </p>
+                    <p class="flex items-center">
+                        <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                        (123) 456-7890
+                    </p>
+                </div>
+                <div class="w-full md:w-1/4">
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/9irlsAI" class="hover:text-pink-300">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://x.com/9irlsAI" class="hover:text-pink-300">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://instagram.com/9irlsAI" class="hover:text-pink-300">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>&copy; 2024 9irls.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // GSAP animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".changing-image", {opacity: 0, duration: 1, delay: 0.5});
+
+        const images = [
+            "./images/9irlsFootball.webp",
+            "./images/9irlsEmpowerment.webp",
+            "./images/9irlsSTEM.webp",
+            "./images/9irlsGamer.webp"
+        ];
+        let currentIndex = 0;
+
+        function changeImage() {
+            const nextIndex = (currentIndex + 1) % images.length;
+            gsap.to("#changing-image img", {
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    document.querySelector("#changing-image img").src = images[nextIndex];
+                    gsap.to("#changing-image img", {opacity: 1, duration: 0.5});
+                    currentIndex = nextIndex;
+                }
+            });
+        }
+
+        setInterval(changeImage, 5000);
+
+        // Animate sections on scroll
+        gsap.from("#activities .grid > div", {
+            scrollTrigger: {
+                trigger: "#activities",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 1
+        });
+
+        gsap.from("#events .grid > div", {
+            scrollTrigger: {
+                trigger: "#events",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 1
+        });
+
+        gsap.from("#blog .grid > div", {
+            scrollTrigger: {
+                trigger: "#blog",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 1
+        });
+
+        gsap.from("#avatars svg", {
+            scrollTrigger: {
+                trigger: "#avatars",
+                start: "top 80%"
+            },
+            scale: 0,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 1
+        });
+
+        // Form submission (you would need to implement the actual submission logic)
+        document.getElementById('consent-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your consent. We will process your submission.');
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We will get back to you soon.');
+        });
+    </script>
+<script>
+// Weekly Schedule Functionality
+const scheduleGrid = document.getElementById('schedule-grid');
+const weekStartDate = document.getElementById('week-start-date');
+const prevWeekBtn = document.getElementById('prev-week');
+const nextWeekBtn = document.getElementById('next-week');
+
+let currentWeekStart = new Date();
+currentWeekStart.setDate(currentWeekStart.getDate() - currentWeekStart.getDay() + 1);
+
+const scheduleData = {
+    "Monday": [
+        { time: "3:00 PM", ages: "5-8", activity: "Dance Party", online: true, video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { time: "4:00 PM", ages: "9-12", activity: "Science Club", online: false },
+        { time: "5:00 PM", ages: "13-16", activity: "Coding Workshop", online: true, video: "https://www.youtube.com/embed/v7AYKMP6rOE" }
+    ],
+    "Tuesday": [
+        { time: "3:00 PM", ages: "5-8", activity: "Story Time", online: true, video: "https://www.youtube.com/embed/2tMI9iDCgnQ" },
+        { time: "4:00 PM", ages: "9-12", activity: "Art Class", online: false },
+        { time: "5:00 PM", ages: "13-16", activity: "Debate Club", online: true, video: "https://www.youtube.com/embed/ml6cT4AZdqI" }
+    ],
+    "Wednesday": [
+        { time: "3:00 PM", ages: "5-8", activity: "Mini Sports", online: false },
+        { time: "4:00 PM", ages: "9-12", activity: "Math Games", online: true, video: "https://www.youtube.com/embed/GHD7Z19vtLw" },
+        { time: "5:00 PM", ages: "13-16", activity: "Photography", online: false }
+    ],
+    "Thursday": [
+        { time: "3:00 PM", ages: "5-8", activity: "Arts & Crafts", online: true, video: "https://www.youtube.com/embed/1EwYLZmkUxo" },
+        { time: "4:00 PM", ages: "9-12", activity: "Robotics", online: false },
+        { time: "5:00 PM", ages: "13-16", activity: "Business 101", online: true, video: "https://www.youtube.com/embed/4pKly2JojMw" }
+    ],
+    "Friday": [
+        { time: "3:00 PM", ages: "5-8", activity: "Music Time", online: true, video: "https://www.youtube.com/embed/5if4cjO5nxo" },
+        { time: "4:00 PM", ages: "9-12", activity: "Junior Chefs", online: false },
+        { time: "5:00 PM", ages: "13-16", activity: "Film Making", online: true, video: "https://www.youtube.com/embed/C_CGxoj-LiM" }
+    ],
+    "Saturday": [
+        { time: "10:00 AM", ages: "All", activity: "Family Fun Day", online: false },
+        { time: "2:00 PM", ages: "All", activity: "Outdoor Adventure", online: false }
+    ],
+    "Sunday": [
+        { time: "11:00 AM", ages: "All", activity: "Mindfulness & Yoga", online: true, video: "https://www.youtube.com/embed/8tq8f71Fq3g" },
+        { time: "3:00 PM", ages: "All", activity: "Community Project", online: false }
+    ]
+};
+
+function updateSchedule() {
+    scheduleGrid.innerHTML = `
+        <div class="font-bold p-2 bg-gray-100">Time</div>
+        <div class="font-bold p-2 bg-gray-100">Monday</div>
+        <div class="font-bold p-2 bg-gray-100">Tuesday</div>
+        <div class="font-bold p-2 bg-gray-100">Wednesday</div>
+        <div class="font-bold p-2 bg-gray-100">Thursday</div>
+        <div class="font-bold p-2 bg-gray-100">Friday</div>
+        <div class="font-bold p-2 bg-gray-100">Saturday</div>
+        <div class="font-bold p-2 bg-gray-100">Sunday</div>
+    `;
+
+    const allTimeSlots = [...new Set(Object.values(scheduleData).flatMap(day => day.map(activity => activity.time)))].sort();
+
+    allTimeSlots.forEach(time => {
+        const row = document.createElement('div');
+        row.className = 'contents';
+        row.innerHTML = `<div class="p-2 border-t">${time}</div>`;
+
+        Object.keys(scheduleData).forEach(day => {
+            const activity = scheduleData[day].find(a => a.time === time);
+            if (activity) {
+                const cellContent = `
+                    <div class="bg-purple-100 p-2 rounded">
+                        <p class="font-bold">${activity.activity}</p>
+                        <p class="text-sm">Ages: ${activity.ages}</p>
+                        ${activity.online ? '<p class="text-sm text-blue-600">Online Activity</p>' : ''}
+                        ${activity.online ? `<button class="mt-2 bg-blue-500 text-white px-2 py-1 rounded text-sm watch-video" data-video="${activity.video}">Watch Video</button>` : ''}
+                    </div>
+                `;
+                row.innerHTML += `<div class="border-t p-2">${cellContent}</div>`;
+            } else {
+                row.innerHTML += '<div class="border-t p-2"></div>';
+            }
+        });
+
+        scheduleGrid.appendChild(row);
+    });
+
+    weekStartDate.textContent = currentWeekStart.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+    // Add event listeners for video buttons
+    document.querySelectorAll('.watch-video').forEach(button => {
+        button.addEventListener('click', function() {
+            const videoUrl = this.getAttribute('data-video');
+            const videoModal = document.createElement('div');
+            videoModal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            videoModal.innerHTML = `
+                <div class="bg-white p-4 rounded-lg max-w-3xl w-full">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold">Activity Video</h3>
+                        <button class="close-modal text-2xl">&times;</button>
+                    </div>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="${videoUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(videoModal);
+
+            videoModal.querySelector('.close-modal').addEventListener('click', () => {
+                document.body.removeChild(videoModal);
+            });
+        });
+    });
+}
+
+prevWeekBtn.addEventListener('click', () => {
+    currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+    updateSchedule();
+});
+
+nextWeekBtn.addEventListener('click', () => {
+    currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+    updateSchedule();
+});
+
+// Initialize the schedule
+updateSchedule();
+
+
+</script>
+</body>
+</html>
