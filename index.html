@@ -277,44 +277,51 @@
 
         gsap.from(".changing-image", {opacity: 0, duration: 1, delay: 0.5});
 
-const images = [
-    [
-        "https://www.blackineducation.com/images/mixedbobstroll.png",
-        "https://www.blackineducation.com/images/mixedboblibrary.png",
-        "https://www.blackineducation.com/images/mixedbobgraduation.png",
-        "https://www.blackineducation.com/images/mixedbobprof.png"
-    ],
-    [
-        "https://www.blackineducation.com/images/mixedbobstroll2.png",
-        "https://www.blackineducation.com/images/mixedboblibrary2.png",
-        "https://www.blackineducation.com/images/mixedbobgraduation2.png",
-        "https://www.blackineducation.com/images/mixedbobprof2.png"
-    ],
-    // Add more groups of images as needed
-];
+        const images = [
+            [
+                "./images/mixedbobstroll.png",
+                "./images/mixedboblibrary.png",
+                "./images/mixedbobgraduation.png",
+                "./images/mixedbobprof.png"
+            ],
 
-let currentGroupIndex = 0;
+            [
+                "./images/maturewomanstroll.png",
+                "./images/maturewomanlibrary.png",
+                "./images/maturewomangraduation.png",
+                "./images/maturewomanprof.png"
+            ],
+            [
+                "./images/photo1.jpeg",
+                "./images/photo2.jpeg",
+                "./images/photo4.jpeg"
+            ],
+          
+            // Add more groups of images as needed
+        ];
 
-function changeImageGroup() {
-    const heroImages = document.getElementById("heroImages");
-    heroImages.innerHTML = "";
-    images[currentGroupIndex].forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.classList.add("rounded-lg", "hover:shadow-xl", "cursor-pointer");
-        heroImages.appendChild(img);
-    });
-    gsap.from(heroImages.children, {
-        opacity: 0,
-        y: 50,
-        stagger: 0.2,
-        duration: 1
-    });
-    currentGroupIndex = (currentGroupIndex + 1) % images.length;
-}
+        let currentGroupIndex = 0;
 
-setInterval(changeImageGroup, 5000);
-changeImageGroup();
+        function changeImageGroup() {
+            const heroImages = document.getElementById("heroImages");
+            heroImages.innerHTML = "";
+            images[currentGroupIndex].forEach(src => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.classList.add("rounded-lg", "hover:shadow-xl", "cursor-pointer");
+                heroImages.appendChild(img);
+            });
+            gsap.from(heroImages.children, {
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                duration: 1
+            });
+            currentGroupIndex = (currentGroupIndex + 1) % images.length;
+        }
+
+        setInterval(changeImageGroup, 5000);
+        changeImageGroup();
        
 
         const resourcesData = {
