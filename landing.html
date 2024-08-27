@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black In Education: Empowering Excellence with AI</title>
+    <meta name="description" content="Join our AI-driven platform empowering Black students and professionals in education. Now trialing with Unison Union and University of Bedminster.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'accent': '#CA8A04',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+     
+        @keyframes fillDegreeArc {
+            0% { stroke-dasharray: 0 753.6; }
+            100% { stroke-dasharray: 753.6 0; }
+        }
+        @keyframes climbLadder {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-330px); }
+        }
+        @keyframes shatterGlass {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(0); opacity: 0; }
+        }
+        @keyframes growBranches {
+            0% { stroke-dashoffset: 1000; }
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes bloomFlower {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+        @keyframes buildBridge {
+            0% { stroke-dashoffset: 1000; }
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes crossBridge {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(380px); }
+        }
+        .section-animation {
+            height: 400px;
+            overflow: hidden;
+        }
+        #degree-progress-arc {
+            animation: fillDegreeArc 5s ease-in-out infinite alternate;
+        }
+        #climbing-figure {
+            animation: climbLadder 10s infinite alternate ease-in-out;
+        }
+        .glass-piece {
+            animation: shatterGlass 2s ease-in-out forwards;
+            animation-delay: calc(var(--delay) * 0.5s);
+        }
+        #innovation-tree path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: growBranches 5s ease-out forwards;
+        }
+        .tree-flower {
+            animation: bloomFlower 1s ease-out forwards;
+            animation-delay: calc(var(--delay) * 0.5s);
+        }
+        #community-bridge {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: buildBridge 3s ease-in-out forwards;
+        }
+        #bridge-figure {
+            animation: crossBridge 5s ease-in-out infinite alternate;
+            animation-delay: 3s;
+        }
+        .slide-in-left {
+            animation: slideInFromLeft 1s ease-out;
+        }
+        .slide-in-right {
+            animation: slideInFromRight 1s ease-out;
+        }
+        .roadmap-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 2px;
+            background-color: #CA8A04;
+        }
+        .roadmap-item:last-child::before {
+            height: 50%;
+        }
+        .roadmap-content {
+            background-color: #1F2937;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <header class="fixed w-full z-50 bg-white dark:bg-gray-900 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-3xl font-bold text-accent">Black In Education</a>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#about" class="hover:text-accent transition">About</a>
+                <a href="#programs" class="hover:text-accent transition">Programs</a>
+                <a href="#ai-tech" class="hover:text-accent transition">AI Technology</a>
+                <a href="#testimonials" class="hover:text-accent transition">Testimonials</a>
+                <a href="#partners" class="hover:text-accent transition">Partners</a>
+                <a href="#pricing" class="hover:text-accent transition">Pricing</a>
+                <a href="#founder" class="hover:text-accent transition">Founder</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                    <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg class="w-6 h-6 dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+                <a href="#" class="bg-accent text-black px-4 py-2 rounded-full hover:bg-yellow-500 transition">Become a Member</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section id="events" class="py-16 bg-accent">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Live Events</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/networkingEvent.png" alt="Networking Event" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Networking Mixer</h3>
+                            <p class="text-gray-600 mb-4">Join us for an evening of networking and professional growth.</p>
+                            <a href="https://www.eventbrite.com" target="_blank" class="text-gray-600 font-semibold hover:text-gray-800">Register on Eventbrite</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/leadershipWorkshop.png" alt="Leadership Workshop" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Leadership Workshop</h3>
+                            <p class="text-gray-600 mb-4">A full-day workshop focused on developing leadership skills.</p>
+                            <a href="https://www.luma.com" target="_blank" class="text-gray-600 font-semibold hover:text-gray-800">Sign up on Luma</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="./images/globalInitiative.png" alt="Global Initiative" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Global Education Initiative</h3>
+                            <p class="text-gray-600 mb-4">Participate in our initiative to improve education globally.</p>
+                            <a href="#" class="text-gray-600 font-semibold hover:text-gray-800">Join Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="hero" class="py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Empowering Black Excellence in Education with AI</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Join our AI-driven platform dedicated to advancing Black representation and success in education. Now trialing with Unison Union and University of Bedminster.</p>
+                <button class="bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition inline-block">
+                    <a href="#" >Join Our Community</a>
+                </button>
+                <!-- <a href="#" class="bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition inline-block">Join Our Community</a> -->
+                <div id="hero-carousel"  class="grid grid-cols-2 gap-4">
+                <!-- class="w-full h-96 bg-cover bg-center rounded-lg shadow-xl mb-8 relative overflow-hidden"> -->
+                    <!-- Hero images will be inserted here by JavaScript -->
+                </div>
+   
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">About Black In Education</h2>
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 slide-in-left">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Our Mission</h3>
+                        <p class="text-lg mb-6">Black In Education is an innovative AI-powered platform designed to address the unique challenges faced by Black students and professionals in the education sector. We're committed to closing the achievement gap, increasing representation, and fostering a supportive community.</p>
+                        <p class="text-lg mb-6">Our AI technology provides personalized learning paths, career guidance, and networking opportunities tailored to the needs of Black individuals in education.</p>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12 slide-in-right">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Current Trial</h3>
+                        <p class="text-lg mb-6">We're excited to announce our ongoing trial in partnership with:</p>
+                        <ul class="list-disc list-inside mb-6">
+                            <li>Unison Union</li>
+                            <li>University of Bedminster</li>
+                        </ul>
+                        <p class="text-lg mb-6">This trial allows us to refine our AI algorithms, gather valuable feedback, and demonstrate the real-world impact of our platform.</p>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Learn More About Our Trial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Our Programs</h2>
+                
+                <!-- Self Program -->
+                <div class="flex flex-col lg:flex-row items-center justify-between mb-20">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 slide-in-left">
+                        <div class="section-animation">
+                            <svg class="w-full h-full" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="150" cy="150" r="120" fill="none" stroke="#4B5563" stroke-width="20" />
+                                <circle id="degree-progress-arc" cx="150" cy="150" r="120" fill="none" stroke="url(#degree-gradient)" stroke-width="20" stroke-dasharray="0 753.6" transform="rotate(-90 150 150)" />
+                                <text x="150" y="160" text-anchor="middle" fill="currentColor" font-size="24" font-weight="bold">AI-Powered</text>
+                                <text id="current-classification" x="150" y="200" text-anchor="middle" fill="currentColor" font-size="36" font-weight="bold">Progress</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12 slide-in-right">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Self Program</h3>
+                        <p class="text-lg mb-6">Tailored recommendations for books, courses, and articles based on your interests and career goals. Track progress and adjust dynamically.</p>
+                        <p class="text-lg mb-6">Our AI technology helps address the achievement gap, where only 17.3% of Black students received a first-class degree, compared to 36.1% of White students in the UK.</p>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Explore Self Program</a>
+                    </div>
+                </div>
+
+                <!-- Growth Program -->
+                <div class="flex flex-col lg:flex-row items-center justify-between mb-20">
+                    <div class="lg:w-1/2 lg:pr-12 slide-in-left">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Growth Program</h3>
+                        <p class="text-lg mb-6">Tailored recommendations for courses and certifications to develop new skills. Guidance on obtaining industry-recognized certifications.</p>
+                        <p class="text-lg mb-6">We're addressing the underrepresentation in senior positions, where only 0.6% of Black academics are professors, compared to 11.9% of White academics in the UK.</p>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Join Growth Program</a>
+                    </div>
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 slide-in-right">
+                        <div class="section-animation">
+                            <svg class="w-full h-full" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="40" y="0" width="10" height="400" fill="url(#ladder-gradient)" />
+                              <rect x="150" y="0" width="10" height="400" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="350" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="300" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="250" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="200" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="150" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="100" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="50" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <g id="ceiling">
+                                    <line x1="40" y1="60" x2="160" y2="60" stroke="#60A5FA" stroke-width="2" />
+                                    <polygon points="60,55 80,60 70,70 50,65" class="glass-piece" fill="#60A5FA" opacity="0.5" style="--delay: 1" />
+                                    <polygon points="120,55 140,60 130,70 110,65" class="glass-piece" fill="#60A5FA" opacity="0.5" style="--delay: 2" />
+                                </g>
+                                <circle id="climbing-figure" cx="100" cy="380" r="15" fill="#000000" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Innovation Program -->
+                <div class="flex flex-col lg:flex-row items-center justify-between mb-20">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 slide-in-left">
+                        <div class="section-animation">
+                            <svg id="innovation-tree" viewBox="0 0 400 400" class="w-full h-full">
+                                <path d="M200,400 Q200,200 100,100" fill="none" stroke="#CA8A04" stroke-width="10"/>
+                                <path d="M200,400 Q200,200 300,100" fill="none" stroke="#CA8A04" stroke-width="10"/>
+                                <circle class="tree-flower" cx="100" cy="100" r="20" fill="#CA8A04" style="--delay: 5"/>
+                                <circle class="tree-flower" cx="300" cy="100" r="20" fill="#CA8A04" style="--delay: 5"/>
+                                <circle class="tree-flower" cx="150" cy="200" r="15" fill="#CA8A04" style="--delay: 3"/>
+                                <circle class="tree-flower" cx="250" cy="200" r="15" fill="#CA8A04" style="--delay: 3"/>
+                                <circle class="tree-flower" cx="200" cy="150" r="25" fill="#CA8A04" style="--delay: 4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12 slide-in-right">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Innovation Program</h3>
+                        <p class="text-lg mb-6">Access to AI-powered labs where students and staff can experiment with emerging technologies. Opportunities to work on real-world projects and solve practical problems.</p>
+                        <p class="text-lg mb-6">We're addressing the underrepresentation in STEM fields, where only 6.2% of Black students are enrolled in STEM courses compared to 14.4% of White students in the UK.</p>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Join Innovation Program</a>
+                    </div>
+                </div>
+
+                <!-- Community Program -->
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+                    <div class="lg:w-1/2 lg:pr-12 slide-in-left">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Community Program</h3>
+                        <p class="text-lg mb-6">AI-powered networking events to connect with peers and industry leaders. Social gatherings and activities to build a sense of community.</p>
+                        <p class="text-lg mb-6">We're working to improve representation, as only 2.1% of academic staff in UK higher education institutions are Black, compared to 84.5% who are White.</p>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Join Our Community</a>
+                    </div>
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 slide-in-right">
+                        <div class="section-animation">
+                            <svg viewBox="0 0 400 200" class="w-full h-full">
+                                <path id="community-bridge" d="M0,100 Q200,0 400,100" fill="none" stroke="#CA8A04" stroke-width="10" stroke-dasharray="10"/>
+                                <circle id="bridge-figure" cx="10" cy="100" r="10" fill="#000"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-tech" class="py-20 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Our AI Technology</h2>
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 slide-in-left">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Cutting-Edge AI</h3>
+                        <ul class="list-disc list-inside mb-6 text-lg">
+                            <li>Natural Language Processing for personalized learning content</li>
+                            <li>Machine Learning algorithms for career path optimization</li>
+                            <li>Computer Vision for interactive virtual classrooms</li>
+                            <li>Predictive Analytics for identifying areas of improvement</li>
+                        </ul>
+                        <p class="text-lg mb-6">Our AI technology is designed to understand and address the unique challenges faced by Black students and professionals in education.</p>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12 slide-in-right">
+                        <div id="ai-demo" class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-semibold mb-4">AI Learning Assistant Demo</h4>
+                            <div id="chat-output" class="mb-4 h-40 overflow-y-auto bg-gray-100 dark:bg-gray-800 p-4 rounded"></div>
+                            <input type="text" id="user-input" class="w-full p-2 mb-2 border rounded" placeholder="Ask a question...">
+                            <button id="send-btn" class="bg-accent text-black px-4 py-2 rounded-full hover:bg-yellow-500 transition">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="resources" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Resources</h2>
+                <div class="text-center mb-8">
+                    <input type="text" id="searchInput" class="p-3 w-full md:w-1/2 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-blue-500" placeholder="Search resources...">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="resourcesColumn">
+                    <!-- Resources will be rendered here -->
+                </div>
+                <div class="text-center mt-8">
+                    <button onclick="document.getElementById('newResourceModal').classList.remove('hidden')" class="bg-yellow-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-600 transition duration-300">Propose New Resource</button>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">What Our Users Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <p class="mb-4 text-lg">"Black In Education has been a game-changer for my academic career. The personalized AI guidance helped me improve my grades significantly."</p>
+                        <p class="font-semibold">- Sarah J., University of Bedminster Student</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <p class="mb-4 text-lg">"As an educator, I've seen firsthand how this platform empowers Black students. It's addressing a crucial need in our education system."</p>
+                        <p class="font-semibold">- Dr. Michael T., Professor at University of Bedminster</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="py-20 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Our Partners and Integrations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-accent">Strategic Partners</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <img src="/path/to/unison-logo.png" alt="Unison Union Logo" class="w-12 h-12 mr-4">
+                                <span>Unison Union - Providing access to their network of education professionals</span>
+                            </li>
+                            <li class="flex items-center">
+                                <img src="/path/to/bedminster-logo.png" alt="University of Bedminster Logo" class="w-12 h-12 mr-4">
+                                <span>University of Bedminster - Collaborating on AI research and student support programs</span>
+                            </li>
+                            <!-- Add more partners as needed -->
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-accent">Technology Integrations</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <img src="/path/to/canvas-logo.png" alt="Canvas LMS Logo" class="w-12 h-12 mr-4">
+                                <span>Canvas LMS - Seamless integration with popular learning management systems</span>
+                            </li>
+                            <li class="flex items-center">
+                                <img src="/path/to/linkedin-logo.png" alt="LinkedIn Logo" class="w-12 h-12 mr-4">
+                                <span>LinkedIn Learning - Access to professional development courses</span>
+                            </li>
+                            <!-- Add more integrations as needed -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="inline-block bg-accent text-black px-8 py-3 rounded-full hover:bg-yellow-500 transition text-lg font-semibold">Become a Partner</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Membership Plans</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-4">Student</h3>
+                        <p class="text-4xl font-bold mb-4">£99.99<span class="text-sm font-normal">/month</span></p>
+                        <ul class="mb-6 text-left">
+                            <li>✓ Personalized learning paths</li>
+                            <li>✓ AI study assistant</li>
+                            <li>✓ Community access</li>
+                        </ul>
+                        <a href="#" class="inline-block bg-accent text-black px-6 py-2 rounded-full hover:bg-yellow-500 transition">Get Started</a>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-4">Professional</h3>
+                        <p class="text-4xl font-bold mb-4">£199.99<span class="text-sm font-normal">/month</span></p>
+                        <ul class="mb-6 text-left">
+                            <li>✓ All Student features</li>
+                            <li>✓ AI Research assistant</li>
+                            <li>✓ Career growth planning</li>
+                            <li>✓ Networking opportunities</li>
+                        </ul>
+                        <a href="#" class="inline-block bg-accent text-black px-6 py-2 rounded-full hover:bg-yellow-500 transition">Get Started</a>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-4">Institution</h3>
+                        <p class="text-4xl font-bold mb-4">Custom</p>
+                        <ul class="mb-6 text-left">
+                            <li>✓ All Professional features</li>
+                            <li>✓ Customized AI solutions</li>
+                            <li>✓ Dedicated support</li>
+                        </ul>
+                        <a href="#" class="inline-block bg-accent text-black px-6 py-2 rounded-full hover:bg-yellow-500 transition">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="founder" class="py-20 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Meet Our Founder</h2>
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 slide-in-left">
+                        <img src="/path/to/founder-image.jpg" alt="Founder Name" class="rounded-full w-64 h-64 object-cover mx-auto mb-8">
+                      </div>
+                    <div class="lg:w-1/2 lg:pl-12 slide-in-right">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Founder Name</h3>
+                        <p class="text-lg mb-6">Our founder brings a wealth of experience and expertise to Black In Education:</p>
+                        <ul class="list-disc list-inside mb-6 text-lg">
+                            <li>Managing Consultant with extensive experience in education and technology</li>
+                            <li>Visiting Lecturer at University of Bedminster</li>
+                            <li>Passionate advocate for equity in education</li>
+                        </ul>
+                        <p class="text-lg mb-6">With a unique blend of industry knowledge and academic experience, our founder is dedicated to leveraging AI technology to create meaningful change in the education sector.</p>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Read Full Bio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-20 bg-accent">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-8 text-black">Ready to Transform Your Educational Journey?</h2>
+                <p class="text-xl mb-8 text-black">Join Black In Education today and unlock your full potential with our AI-powered platform.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="bg-black text-white text-lg px-8 py-3 rounded-full hover:bg-gray-800 transition">Become a Member</a>
+                    <a href="#" class="bg-white text-black text-lg px-8 py-3 rounded-full hover:bg-gray-200 transition">Schedule a Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Black In Education</h3>
+                    <p>Empowering Black excellence through AI-driven education.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-accent">About</a></li>
+                        <li><a href="#programs" class="hover:text-accent">Programs</a></li>
+                        <li><a href="#ai-tech" class="hover:text-accent">AI Technology</a></li>
+                        <li><a href="#partners" class="hover:text-accent">Partners</a></li>
+                        <li><a href="#pricing" class="hover:text-accent">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li>Email: info@blackineducation.com</li>
+                        <li>Phone: +44 20 1234 5678</li>
+                        <li>Address: 123 Education Lane, London, UK</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-accent"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-accent"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2024 Black In Education. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure dark mode is default
+        document.documentElement.classList.add('dark');
+
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Rotating hero images
+        const heroImages = [
+            [
+                "./images/mixedbobstroll.png",
+                "./images/mixedboblibrary.png",
+                "./images/mixedbobgraduation.png",
+                "./images/mixedbobprof.png"
+            ],
+
+            [
+                "./images/maturewomanstroll.png",
+                "./images/maturewomanlibrary.png",
+                "./images/maturewomangraduation.png",
+                "./images/maturewomanprof.png"
+            ],
+            [
+                "./images/photo1.jpeg",
+                "./images/photo2.jpeg"
+            ],
+          
+            // Add more groups of images as needed
+        ];
+
+                
+
+        const heroCarousel = document.getElementById('hero-carousel');
+        let currentImageGroupIndex = 0;
+
+        function rotateHeroImages() {
+            heroCarousel.innerHTML = '';
+            const currentImages = heroImages[currentImageGroupIndex];
+            currentImages.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.classList.add('w-full', 'h-full', 'object-contain', 'rounded-lg', 'shadow-xl', 'mb-8');
+                heroCarousel.appendChild(img);
+            });
+            currentImageGroupIndex = (currentImageGroupIndex + 1) % heroImages.length;
+        }
+
+        rotateHeroImages(); // Initial images
+        setInterval(rotateHeroImages, 5000); // Rotate every 5 seconds
+        let currentGroupIndex = 0;
+
+        // function rotateHeroImages() {
+        //     const heroImages = document.getElementById("hero-carousel");
+        //     heroImages.innerHTML = "";
+        //     images[currentGroupIndex].forEach(src => {
+        //         const img = document.createElement("img");
+        //         img.src = src;
+        //         img.classList.add("rounded-lg", "hover:shadow-xl", "cursor-pointer");
+        //         heroImages.appendChild(img);
+        //     });
+        
+        // rotateHeroImages(); // Initial images
+        // setInterval(rotateHeroImages, 5000); // Rotate every 5 seconds
+        // let currentGroupIndex = 0;
+
+        // Animations for section content
+        const animatedSections = document.querySelectorAll('.slide-in-left, .slide-in-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedSections.forEach(section => {
+            section.style.animationPlayState = 'paused';
+            observer.observe(section);
+        });
+
+        // AI Demo Chat Functionality
+        const chatOutput = document.getElementById('chat-output');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        const aiResponses = [
+            "That's an excellent question! Let me provide you with some resources on that topic.",
+            "Based on your learning style, I recommend focusing on visual aids for this concept.",
+            "Great progress! You've improved significantly in this area over the past week.",
+            "Let's break down this problem into smaller steps. First, we should...",
+            "Have you considered approaching this from a different angle? Try thinking about..."
+        ];
+
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            messageElement.classList.add(isUser ? 'text-right' : 'text-left', 'mb-2');
+            chatOutput.appendChild(messageElement);
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+        }
+
+        function getAIResponse() {
+            return aiResponses[Math.floor(Math.random() * aiResponses.length)];
+        }
+
+        sendBtn.addEventListener('click', () => {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+                setTimeout(() => {
+                    addMessage(getAIResponse());
+                }, 1000);
+            }
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

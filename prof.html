@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black In Education: Empowering Excellence with AI</title>
+    <meta name="description" content="Join our community of Black students, academics, and professionals advancing in education through cutting-edge AI technology.">
+    <link href="./styles/tailwind.min.css" rel="stylesheet">
+    <script src="./scripts/gsap.min.js"></script>
+    <script src="./scripts/ScrollTrigger.min.js"></script>
+    <script src="./scripts/lucide.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'accent': '#CA8A04',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fillDegreeArc {
+            0% { stroke-dasharray: 0 753.6; }
+            100% { stroke-dasharray: 753.6 0; }
+        }
+        @keyframes climbLadder {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-330px); }
+        }
+        @keyframes shatter {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+        .degree-progress-container, .career-ladder-container {
+            overflow: hidden;
+        }
+        #degree-progress-arc {
+            animation: fillDegreeArc 5s ease-in-out infinite alternate;
+        }
+        #climbing-figure {
+            animation: climbLadder 10s infinite alternate ease-in-out;
+        }
+        .glass-ceiling {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        .shattered {
+            animation: shatter 1s forwards;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <header class="fixed w-full z-50 bg-white dark:bg-gray-900 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-3xl font-bold text-accent">Black In Education</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#students" class="hover:text-accent transition">Students</a>
+                <a href="#academics" class="hover:text-accent transition">Academics</a>
+                <a href="#professionals" class="hover:text-accent transition">Professionals</a>
+                <a href="#courses" class="hover:text-accent transition">AI Courses</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                    <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg class="w-6 h-6 dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+                <a href="#" class="bg-accent text-black px-4 py-2 rounded-full hover:bg-yellow-500 transition">Get early access</a>
+            </div>
+        </div>
+    </header>
+
+<!--  -->    <main class="pt-20">
+        <section id="hero" class="py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Empowering Black Excellence in Education with AI</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Join our community of students, academics, and professionals dedicated to advancing Black representation and success in education through cutting-edge AI technology.</p>
+                <div id="hero-carousel" class="w-full h-96 bg-cover bg-center rounded-lg shadow-xl mb-8 relative overflow-hidden">
+                    <!-- Hero images will be inserted here by JavaScript -->
+                </div>
+                <a href="#" class="bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition inline-block">Start Your AI-Powered Journey</a>
+            </div>
+        </section>
+
+        <section id="students" class="py-20 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">For Students</h2>
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0">
+                        <div class="degree-progress-container w-full h-96 relative">
+                            <svg class="degree-progress w-48 h-48 mx-auto" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="degree-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#CA8A04;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="150" cy="150" r="120" fill="none" stroke="#4B5563" stroke-width="20" />
+                                <circle id="degree-progress-arc" cx="150" cy="150" r="120" fill="none" stroke="url(#degree-gradient)" stroke-width="20" stroke-dasharray="0 753.6" transform="rotate(-90 150 150)" />
+                                <text x="150" y="160" text-anchor="middle" fill="currentColor" font-size="24" font-weight="bold">AI-Powered</text>
+                                <text id="current-classification" x="150" y="200" text-anchor="middle" fill="currentColor" font-size="36" font-weight="bold">Progress</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Elevate Your Academic Performance with AI</h3>
+                        <p class="text-lg mb-6">Our AI-powered resources and support systems are designed to help you progress from any starting point to the highest levels of academic achievement.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Personalized AI study plans tailored to your goals</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>AI-assisted tutoring with top-performing students</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Access to AI-curated study materials and past papers</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Boost Your Grades with AI</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="professionals" class="py-20 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">For Professionals</h2>
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+
+                    <div class="lg:w-1/2 lg:pl-12">
+                        <h3 class="text-3xl font-bold mb-6 text-accent">Climb the Career Ladder with AI</h3>
+                        <p class="text-lg mb-6">Our AI-driven resources, mentorship programs, and networking opportunities are designed to propel you to new heights in your career.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>AI-powered professional development resources</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>AI-matched mentorship with successful Black professionals</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>AI-curated networking events and job opportunities</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-block bg-accent text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-500 transition mt-8">Accelerate Your Career with AI</a>
+                    </div>
+                                      <div class="lg:w-1/2 mb-12 lg:mb-0">
+                        <div class="career-ladder-container w-full h-96 relative">
+                            <svg class="career-ladder w-48 h-96 mx-auto" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="ladder-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#CA8A04;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#854D0E;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <rect x="40" y="0" width="10" height="400" fill="url(#ladder-gradient)" />
+                                <rect x="150" y="0" width="10" height="400" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="350" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="300" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="250" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="200" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="150" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="100" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <rect class="ladder-rung" x="40" y="50" width="120" height="10" fill="url(#ladder-gradient)" />
+                                <!-- Glass Ceiling -->
+                                <rect class="glass-ceiling" x="40" y="50" width="120" height="10" fill="rgba(255, 255, 255, 0.6)" />
+                                <circle id="climbing-figure" cx="100" cy="380" r="15" fill="#000000" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="how-it-works" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">How It Works</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">Enhance with AI</h3>
+                        <p>Use AI to boost your education and career progress.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">Customize Your Journey</h3>
+                        <p>Start with AI templates and make them your own.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">Easy Project Upload</h3>
+                        <p>Quickly add your existing projects to our AI platform.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">Create Your Own Path</h3>
+                        <p>Build a new learning or career plan with our AI tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="academics" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">AI Enablers</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">AI-Enhanced Research</h3>
+                        <p>Leverage AI tools to accelerate your research process and uncover groundbreaking insights in your field.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">AI Writing Assistance</h3>
+                        <p>Utilize AI-powered writing tools to enhance your academic publications and grant proposals.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">AI Networking</h3>
+                        <p>Connect with fellow Black academics and researchers using our AI-driven networking platform.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">AI Fundamentals</h3>
+                        <p class="mb-4">Learn the basics of artificial intelligence and its applications in various fields.</p>
+                        <a href="#" class="text-accent hover:underline">Learn more &rarr;</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">Machine Learning for Education</h3>
+                        <p class="mb-4">Discover how machine learning can revolutionize educational practices and outcomes.</p>
+                        <a href="#" class="text-accent hover:underline">Learn more &rarr;</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-accent">AI Ethics and Bias</h3>
+                        <p class="mb-4">Explore the ethical considerations and potential biases in AI systems.</p>
+                        <a href="#" class="text-accent hover:underline">Learn more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Black In Education AI</h3>
+                    <p>Empowering Black excellence through AI-driven education.</p>
+                </div>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul>
+                        <li><a href="#" class="hover:text-accent">Home</a></li>
+                        <li><a href="#" class="hover:text-accent">About Us</a></li>
+                        <li><a href="#" class="hover:text-accent">Courses</a></li>
+                        <li><a href="#" class="hover:text-accent">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-xl font-semibold mb-4">Connect</h4>
+                    <ul>
+                        <li><a href="#" class="hover:text-accent">Facebook</a></li>
+                        <li><a href="#" class="hover:text-accent">Twitter</a></li>
+                        <li><a href="#" class="hover:text-accent">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-accent">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/4">
+                    <h4 class="text-xl font-semibold mb-4">Subscribe</h4>
+                    <form>
+                        <input type="email" placeholder="Enter your email" class="w-full p-2 mb-2 bg-gray-800 rounded">
+                        <button type="submit" class="bg-accent text-black px-4 py-2 rounded-full hover:bg-yellow-500 transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>&copy; 2024 Black In Education AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure dark mode is default
+        document.documentElement.classList.add('dark');
+
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Rotating hero images
+        // const heroImages = [
+        //     'url("/api/placeholder/1200/600")',
+        //     'url("/api/placeholder/1200/600")',
+        //     'url("/api/placeholder/1200/600")',
+        //     'url("/api/placeholder/1200/600")'
+        // ];
+        const heroImages = [
+            [
+                "./images/mixedbobstroll.png",
+                "./images/mixedboblibrary.png",
+                "./images/mixedbobgraduation.png",
+                "./images/mixedbobprof.png"
+            ],
+
+            [
+                "./images/maturewomanstroll.png",
+                "./images/maturewomanlibrary.png",
+                "./images/maturewomangraduation.png",
+                "./images/maturewomanprof.png"
+            ],
+            [
+                "./images/photo1.jpeg",
+                "./images/photo2.jpeg"
+            ],
+          
+            // Add more groups of images as needed
+        ];
+
+        const heroCarousel = document.getElementById('hero-carousel');
+        let currentImageIndex = 0;
+
+        function rotateHeroImage() {
+            heroCarousel.style.backgroundImage = heroImages[currentImageIndex];
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+        }
+
+        rotateHeroImage(); // Initial image
+        setInterval(rotateHeroImage, 5000); // Rotate every 5 seconds
+
+        // Degree progress animation
+        const degreeProgressArc = document.getElementById('degree-progress-arc');
+        const currentClassification = document.getElementById('current-classification');
+        const classifications = ['1st', '2:1', '2:2', '3rd'];
+
+        function updateClassification() {
+            const progress = parseFloat(degreeProgressArc.getAttribute('stroke-dasharray').split(' ')[0]);
+            const totalLength = 753.6; // Circumference of the circle
+            let index = 0;
+
+            if (progress / totalLength > 0.9) index = 3;
+            else if (progress / totalLength > 0.6) index = 2;
+            else if (progress / totalLength > 0.3) index = 1;
+
+            currentClassification.textContent = classifications[index];
+        }
+
+        degreeProgressArc.addEventListener('animationiteration', updateClassification);
+        updateClassification(); // Initial update
+
+        // Career ladder animation
+        const ladderRungs = document.querySelectorAll('.ladder-rung');
+        const climbingFigure = document.getElementById('climbing-figure');
+        const glassCeiling = document.querySelector('.glass-ceiling');
+
+        climbingFigure.addEventListener('animationiteration', () => {
+            ladderRungs.forEach((rung, index) => {
+                setTimeout(() => {
+                    rung.style.opacity = 1;
+                }, index * 200);
+            });
+
+            // setTimeout(() => {
+            //     ladderRungs.forEach(rung => {
+            //         rung.style.opacity = 0;
+            //     });
+            // }, 5000);
+        });
+
+        climbingFigure.addEventListener('animationiteration', () => {
+            setTimeout(() => {
+                glassCeiling.classList.add('shattered');
+            }, 4800); // Time in ms to match the figure reaching the glass ceiling
+        });
+    </script>
+</body>
+</html>
